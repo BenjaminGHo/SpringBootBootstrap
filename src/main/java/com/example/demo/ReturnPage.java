@@ -9,10 +9,7 @@ public class ReturnPage {
 
 	@RequestMapping("/ReturnPage")
 	String finn(String name, Model model) {
-		System.out.println("IN HERE");
-		
-		 model.addAttribute("name", "Giggles");
-		
+		 model.addAttribute("name", "Giggles");		 
 		return "index";
 	}
 	

@@ -3,11 +3,63 @@
 	<head>
 		<title>Getting Started: Serving Web Content</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<style>
+			.row {
+				border: 1px solid #CCC;
+			}
+		</style>
+		
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="/stylesheet/bootstrap.min.css"/>
+		
+		
+		<script>
+			$(document).ready(function(){
+				
+				
+				$.ajax({
+					url: "/getRestJson",
+					success: function(data){
+						console.log(data);
+						$("#city1").html(data[0]["name"]);
+						$("#name1").html(data[0]["name"]);
+						$("#city2").html(data[1]["name"]);
+						$("#name2").html(data[1]["name"]);
+					}
+				})
+				
+				//console.log(1);
+			})
+		</script>
+		
 	</head>
 	<body>
 		<p th:text="'Hello, ' + ${name} + '!'" />
 		
 		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					Ben
+				</div>
+				<div class="col-md-6">
+					Ho
+				</div>
+				<div class="col-md-6" id='city1'>
+				</div>
+				<div class="col-md-6" id='name1'>
+				</div>
+				<div class="col-md-6" id='city2'>
+				</div>
+				<div class="col-md-6" id='name2'>
+				</div>
+
+			</div>
+		</div>
 		
 		
 	</body>

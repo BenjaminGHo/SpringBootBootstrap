@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,6 +16,26 @@ public class HelloController {
     @RequestMapping("/Katie")
     public String index() {
         return "Greetings from Spring Boot!!!!";
+    }
+    
+    @RequestMapping("/getRestJson")
+    public ArrayList<Game> getRestJson() {
+    	
+    	
+    	Game game1 = new Game();
+    	game1.name = "Celtics";
+    	
+
+    	Game game2 = new Game();
+    	game2.name = "Warriors";
+
+    	
+    	ArrayList<Game> gameList = new ArrayList<Game>();
+    	gameList.add(game1);
+    	gameList.add(game2);
+    	
+    	
+    	return gameList;
     }
     
     @RequestMapping("/NBA")
